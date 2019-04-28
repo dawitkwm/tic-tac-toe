@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import Tile from "./components/tile/tile";
+import Board from "./components/board/board";
 
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Tile />, document.getElementById("root"));
+ReactDOM.render(<Board />, document.getElementById("root"));
 
 serviceWorker.unregister();
