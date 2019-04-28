@@ -38,6 +38,6 @@
     "typescript": "^3.4.5"
   },
   "jest" : {
-    "sanpshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
