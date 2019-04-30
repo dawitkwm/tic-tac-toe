@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Info Component should render Info component 1`] = `
-<header>
-  game status indicator: whose turn is it or who won the game
-</header>
-`;
+exports[`Info Component should render Info component 1`] = `<header />`;

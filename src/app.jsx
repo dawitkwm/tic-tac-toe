@@ -51,6 +51,8 @@ class App extends Component {
     let info;
     if (winner) {
       info = "Winner: " + winner;
+    } else if (calculateTie(current.tiles)) {
+      info = "It is a tie";
     } else {
       info = "Next player: " + (this.state.xTurn ? "X" : "O");
     }
@@ -60,10 +62,10 @@ class App extends Component {
         <div className="game-info">
           <Info info={info} />
         </div>
-        <div className="game-board">
+        <div className="d-flex justify-content-center game-board">
           <Board tiles={current.tiles} onClick={i => this.handleClick(i)} />
         </div>
-        <div className="game-history">
+        <div className="d-flex justify-content-center game-history">
           <History history={history} onClick={step => this.jumpTo(step)} />
         </div>
       </div>
@@ -89,6 +91,15 @@ function calculateWinner(tiles) {
     }
   }
   return null;
+}
+
+function calculateTie(tiles) {
+  for (let i = 0; i < tiles.length; i++) {
+    if (!tiles[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 export default App;

@@ -2,16 +2,22 @@
 
 exports[`History component should render History component 1`] = `
 <div>
-  <p>
+  <h1>
     History
-  </p>
-  <div>
-    <button
-      key="1"
+  </h1>
+  <ol
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+      key="0"
     >
-      Move #
-      1
-    </button>
-  </div>
+      <button
+        onClick={[Function]}
+      >
+        Restart Game
+      </button>
+    </li>
+  </ol>
 </div>
 `;

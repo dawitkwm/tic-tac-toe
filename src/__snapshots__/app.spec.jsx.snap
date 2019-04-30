@@ -7,10 +7,12 @@ exports[`App component should render game App component 1`] = `
   <div
     className="game-info"
   >
-    <Info />
+    <Info
+      info="Next player: X"
+    />
   </div>
   <div
-    className="game-board"
+    className="d-flex justify-content-center game-board"
   >
     <Board
       onClick={[Function]}
@@ -30,9 +32,28 @@ exports[`App component should render game App component 1`] = `
     />
   </div>
   <div
-    className="game-history"
+    className="d-flex justify-content-center game-history"
   >
-    <History />
+    <History
+      history={
+        Array [
+          Object {
+            "tiles": Array [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+            ],
+          },
+        ]
+      }
+      onClick={[Function]}
+    />
   </div>
 </div>
 `;

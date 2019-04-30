@@ -4,11 +4,13 @@ import "./history.css";
 
 class History extends Component {
   render() {
-    const moves = this.props.history.map((step, move) => {
-      const description = move ? "Go to move #" + move : "Go to game start";
+    const moves = this.props.history.map((boardConfig, moveNumber) => {
+      const description = moveNumber
+        ? "Go To Step " + moveNumber
+        : "Restart Game";
       return (
-        <li key={move}>
-          <button onClick={() => this.props.onClick(move)}>
+        <li key={moveNumber} className="list-group-item">
+          <button onClick={() => this.props.onClick(moveNumber)}>
             {description}
           </button>
         </li>
@@ -16,8 +18,8 @@ class History extends Component {
     });
     return (
       <div>
-        <p>History</p>
-        <ol>{moves}</ol>
+        <h1>History</h1>
+        <ol className="list-group">{moves}</ol>
       </div>
     );
   }
