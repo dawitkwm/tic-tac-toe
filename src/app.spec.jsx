@@ -8,4 +8,9 @@ describe("App component", () => {
     const appWrapper = shallow(<App />);
     expect(appWrapper).toMatchSnapshot();
   });
+
+  it("player x should start the game", () => {
+    const appWrapper = shallow(<App />);
+    expect(appWrapper.state("xTurn")).toEqual(true);
+  });
 });
