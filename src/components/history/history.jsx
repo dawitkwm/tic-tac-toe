@@ -6,10 +6,15 @@ class History extends Component {
   render() {
     const moves = Array(2).fill(null);
     const history = moves.map((h, i) => {
-      const button = i > 0 ? <button key={i}>Go back to move #{i}</button> : "";
+      const button = i > 0 ? <button key={i}>Move #{i}</button> : "";
       return button;
     });
-    return <div>{history}</div>;
+    return (
+      <div>
+        <p>History</p>
+        <div>{history}</div>
+      </div>
+    );
   }
 }
 
