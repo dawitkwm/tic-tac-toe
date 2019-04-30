@@ -7,6 +7,12 @@ import History from "./components/history/history";
 import Info from "./components/info/info";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      xTurn: true
+    };
+  }
   render() {
     return (
       <div className="game">
