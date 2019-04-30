@@ -13,4 +13,10 @@ describe("App component", () => {
     const appWrapper = shallow(<App />);
     expect(appWrapper.state("xTurn")).toEqual(true);
   });
+
+  //size 1 reflects the current empty board
+  it("game history should initially be of size 1", () => {
+    const appWrapper = shallow(<App />);
+    expect(appWrapper.state("history").length).toEqual(1);
+  });
 });
