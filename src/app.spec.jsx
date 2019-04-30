@@ -73,4 +73,19 @@ describe("App component", () => {
       tileButtonValueAfterOneClick === tileButtonValueAfterTwoClicks
     ).toEqual(true);
   });
+
+  it("players should take turns", () => {
+    const appWrapper = mount(<App />);
+    expect(appWrapper.state("xTurn")).toEqual(true);
+    appWrapper
+      .find("button.tile")
+      .at(0)
+      .simulate("click");
+    expect(appWrapper.state("xTurn")).toEqual(false);
+    appWrapper
+      .find("button.tile")
+      .at(1)
+      .simulate("click");
+    expect(appWrapper.state("xTurn")).toEqual(true);
+  });
 });
