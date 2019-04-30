@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       history: [{ tiles: Array(9).fill(null) }],
-      xTurn: true
+      xTurn: true,
+      moveNumber: 0
     };
   }
   render() {
