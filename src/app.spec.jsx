@@ -25,12 +25,19 @@ describe("App component", () => {
     expect(appWrapper.state("moveNumber")).toEqual(0);
   });
 
-  //size 1 reflects the current empty board
   it("when Tile is clicked, game history size should increase by one", () => {
     const appWrapper = mount(<App />);
     expect(appWrapper.state("history").length).toEqual(1);
     const tileWrapper = appWrapper.find("Tile").at(0);
     tileWrapper.find("button.tile").simulate("click");
     expect(appWrapper.state("history").length).toEqual(2);
+  });
+
+  it("when Tile is clicked while game is not over, number of moves should increase by one", () => {
+    const appWrapper = mount(<App />);
+    expect(appWrapper.state("moveNumber")).toEqual(0);
+    const tileWrapper = appWrapper.find("Tile").at(0);
+    tileWrapper.find("button.tile").simulate("click");
+    expect(appWrapper.state("moveNumber")).toEqual(1);
   });
 });
