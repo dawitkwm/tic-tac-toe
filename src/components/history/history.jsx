@@ -4,15 +4,20 @@ import "./history.css";
 
 class History extends Component {
   render() {
-    const moves = Array(2).fill(null);
-    const history = moves.map((h, i) => {
-      const button = i > 0 ? <button key={i}>Move #{i}</button> : "";
-      return button;
+    const moves = this.props.history.map((step, move) => {
+      const description = move ? "Go to move #" + move : "Go to game start";
+      return (
+        <li key={move}>
+          <button onClick={() => this.props.onClick(move)}>
+            {description}
+          </button>
+        </li>
+      );
     });
     return (
       <div>
         <p>History</p>
-        <div>{history}</div>
+        <ol>{moves}</ol>
       </div>
     );
   }
