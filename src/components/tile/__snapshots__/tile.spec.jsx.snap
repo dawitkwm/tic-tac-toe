@@ -7,3 +7,11 @@ exports[`Tile should render Tile component 1`] = `
    
 </button>
 `;
+
+exports[`Tile when clicked a handler funciton should be called 1`] = `
+<button
+  className="tile"
+>
+   
+</button>
+`;

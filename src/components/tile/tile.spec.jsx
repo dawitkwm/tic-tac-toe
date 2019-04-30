@@ -8,4 +8,11 @@ describe("Tile", () => {
     const tileWrapper = shallow(<Tile />);
     expect(tileWrapper).toMatchSnapshot();
   });
+
+  it("when clicked a handler funciton should be called", () => {
+    const mockCallBack = jest.fn();
+    const tileWrapper = shallow(<Tile onClick={mockCallBack} />);
+    tileWrapper.find("button.tile").simulate("click");
+    expect(mockCallBack).toHaveBeenCalled();
+  });
 });
