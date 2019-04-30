@@ -15,8 +15,13 @@ describe("App component", () => {
   });
 
   //size 1 reflects the current empty board
-  it("game history should initially be of size 1", () => {
+  it("game history should initially be of size one", () => {
     const appWrapper = shallow(<App />);
     expect(appWrapper.state("history").length).toEqual(1);
+  });
+
+  it("number of moves should initially be zero", () => {
+    const appWrapper = shallow(<App />);
+    expect(appWrapper.state("moveNumber")).toEqual(0);
   });
 });
