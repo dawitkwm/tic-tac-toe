@@ -6,6 +6,6 @@ import App from "./app";
 describe("App component", () => {
   it("should render game App component", () => {
     const appWrapper = shallow(<App />);
-    expect(appWrapper).toMatchSanpshot();
+    expect(appWrapper).toMatchSnapshot();
   });
 });
