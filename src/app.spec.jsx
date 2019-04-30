@@ -40,4 +40,10 @@ describe("App component", () => {
     tileWrapper.find("button.tile").simulate("click");
     expect(appWrapper.state("moveNumber")).toEqual(1);
   });
+
+  it("a Tile should initially be emtpy", () => {
+    const appWrapper = mount(<App />);
+    const tileButton = appWrapper.find("button.tile").at(0);
+    expect(tileButton.text()).toEqual("");
+  });
 });

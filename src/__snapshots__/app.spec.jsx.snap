@@ -8,7 +8,7 @@ exports[`App component should render game App component 1`] = `
     className="game-info"
   >
     <Info
-      info="Next player: X"
+      info="Next player is X"
     />
   </div>
   <div

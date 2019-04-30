@@ -6,6 +6,8 @@ import Board from "./components/board/board";
 import History from "./components/history/history";
 import Info from "./components/info/info";
 
+import { calculateWinner, calculateTie } from "./util/util";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -50,11 +52,11 @@ class App extends Component {
 
     let info;
     if (winner) {
-      info = "Winner: " + winner;
+      info = "Winner is player " + winner;
     } else if (calculateTie(current.tiles)) {
       info = "It is a tie";
     } else {
-      info = "Next player: " + (this.state.xTurn ? "X" : "O");
+      info = "Next player is " + (this.state.xTurn ? "X" : "O");
     }
 
     return (
@@ -72,34 +74,4 @@ class App extends Component {
     );
   }
 }
-
-function calculateWinner(tiles) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (tiles[a] && tiles[a] === tiles[b] && tiles[a] === tiles[c]) {
-      return tiles[a];
-    }
-  }
-  return null;
-}
-
-function calculateTie(tiles) {
-  for (let i = 0; i < tiles.length; i++) {
-    if (!tiles[i]) {
-      return false;
-    }
-  }
-  return true;
-}
-
 export default App;
