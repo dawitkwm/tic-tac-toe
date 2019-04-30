@@ -10,6 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      history: [{ tiles: Array(9).fill(null) }],
       xTurn: true
     };
   }
