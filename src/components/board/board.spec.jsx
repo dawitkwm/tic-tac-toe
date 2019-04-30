@@ -5,12 +5,12 @@ import Board from "./board";
 
 describe("Board component", () => {
   it("should render Board component", () => {
-    const boardComponent = shallow(<Board />);
-    expect(boardComponent).toMatchSnapshot();
+    const boardWrapper = shallow(<Board />);
+    expect(boardWrapper).toMatchSnapshot();
   });
 
   it("should have nine tiles", () => {
-    const boardComponent = shallow(<Board />);
-    expect(boardComponent.state("tiles").length).toEqual(9);
+    const boardWrapper = shallow(<Board />);
+    expect(boardWrapper.find("Tile").length).toEqual(9);
   });
 });
