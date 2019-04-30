@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tile should render Tile component 1`] = `
-<input
+<button
   className="tile"
-  type="button"
-  value="X"
-/>
+>
+   
+</button>
 `;
