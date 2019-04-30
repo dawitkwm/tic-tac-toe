@@ -46,4 +46,15 @@ describe("App component", () => {
     const tileButton = appWrapper.find("button.tile").at(0);
     expect(tileButton.text()).toEqual("");
   });
+
+  it("playing on an empty Tile should change its value", () => {
+    const appWrapper = mount(<App />);
+    const tileButton = appWrapper.find("button.tile").at(0);
+    const tileButtonOriginalValue = tileButton.text();
+    tileButton.simulate("click");
+    const tileButtonValueAfterOneClick = tileButton.text();
+    expect(tileButtonOriginalValue === tileButtonValueAfterOneClick).toEqual(
+      false
+    );
+  });
 });
