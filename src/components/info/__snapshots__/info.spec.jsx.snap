@@ -2,6 +2,6 @@
 
 exports[`Info Component should render Info component 1`] = `
 <header>
-  statusInfo
+  game status indicator: whose turn is it or who won the game
 </header>
 `;
