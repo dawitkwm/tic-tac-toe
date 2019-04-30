@@ -57,4 +57,20 @@ describe("App component", () => {
       false
     );
   });
+
+  it("playing on an occupied Tile should not change its value", () => {
+    const appWrapper = mount(<App />);
+    const tileButton = appWrapper.find("button.tile").at(0);
+    const tileButtonOriginalValue = tileButton.text();
+    tileButton.simulate("click");
+    const tileButtonValueAfterOneClick = tileButton.text();
+    tileButton.simulate("click");
+    const tileButtonValueAfterTwoClicks = tileButton.text();
+    expect(tileButtonOriginalValue === tileButtonValueAfterOneClick).toEqual(
+      false
+    );
+    expect(
+      tileButtonValueAfterOneClick === tileButtonValueAfterTwoClicks
+    ).toEqual(true);
+  });
 });
