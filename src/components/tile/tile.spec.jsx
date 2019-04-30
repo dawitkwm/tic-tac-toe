@@ -5,7 +5,7 @@ import Tile from "./tile";
 
 describe("Tile", () => {
   it("should render Tile component", () => {
-    const tileComponent = shallow(<Tile />);
-    expect(tileComponent).toMatchSnapshot();
+    const tileWrapper = shallow(<Tile />);
+    expect(tileWrapper).toMatchSnapshot();
   });
 });
