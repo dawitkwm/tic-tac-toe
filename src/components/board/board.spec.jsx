@@ -5,12 +5,18 @@ import Board from "./board";
 
 describe("Board component", () => {
   it("should render Board component", () => {
-    const boardWrapper = shallow(<Board />);
+    const mockCallBack = jest.fn();
+    const boardWrapper = shallow(
+      <Board tiles={Array(9).fill(null)} onClick={mockCallBack} />
+    );
     expect(boardWrapper).toMatchSnapshot();
   });
 
   it("should have nine tiles", () => {
-    const boardWrapper = shallow(<Board />);
+    const mockCallBack = jest.fn();
+    const boardWrapper = shallow(
+      <Board tiles={Array(9).fill(null)} onClick={mockCallBack} />
+    );
     expect(boardWrapper.find("Tile").length).toEqual(9);
   });
 });

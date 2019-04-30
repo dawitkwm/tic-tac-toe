@@ -9,7 +9,7 @@ describe("Tile", () => {
     expect(tileWrapper).toMatchSnapshot();
   });
 
-  it("when clicked a handler funciton should be called", () => {
+  it("when Tile is clicked a handler funciton should be called", () => {
     const mockCallBack = jest.fn();
     const tileWrapper = shallow(<Tile onClick={mockCallBack} />);
     tileWrapper.find("button.tile").simulate("click");

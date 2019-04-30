@@ -15,6 +15,23 @@ class App extends Component {
       moveNumber: 0
     };
   }
+
+  handleClick(i) {
+    const history = this.state.history.slice(0, this.state.moveNumber + 1);
+    const current = history[history.length - 1];
+    const tiles = current.tiles.slice(); //copy
+    tiles[i] = this.state.xTurn ? "X" : "O";
+    this.setState({
+      history: history.concat([
+        {
+          tiles: tiles
+        }
+      ]),
+      moveNumber: history.length,
+      xTurn: !this.state.xTurn
+    });
+  }
+
   render() {
     return (
       <div className="game">
@@ -22,7 +39,10 @@ class App extends Component {
           <Info />
         </div>
         <div className="game-board">
-          <Board />
+          <Board
+            tiles={this.state.history[this.state.moveNumber].tiles}
+            onClick={i => this.handleClick(i)}
+          />
         </div>
         <div className="game-history">
           <History />

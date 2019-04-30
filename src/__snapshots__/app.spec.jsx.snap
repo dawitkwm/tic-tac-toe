@@ -12,7 +12,22 @@ exports[`App component should render game App component 1`] = `
   <div
     className="game-board"
   >
-    <Board />
+    <Board
+      onClick={[Function]}
+      tiles={
+        Array [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+        ]
+      }
+    />
   </div>
   <div
     className="game-history"

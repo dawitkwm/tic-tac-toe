@@ -2,11 +2,16 @@
 
 exports[`History component should render History component 1`] = `
 <div>
-  <button
-    key="1"
-  >
-    Go back to move #
-    1
-  </button>
+  <p>
+    History
+  </p>
+  <div>
+    <button
+      key="1"
+    >
+      Move #
+      1
+    </button>
+  </div>
 </div>
 `;

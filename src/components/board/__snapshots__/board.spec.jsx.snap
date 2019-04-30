@@ -7,23 +7,50 @@ exports[`Board component should render Board component 1`] = `
   <div
     className="board-row"
   >
-    <Tile />
-    <Tile />
-    <Tile />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
   </div>
   <div
     className="board-row"
   >
-    <Tile />
-    <Tile />
-    <Tile />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
   </div>
   <div
     className="board-row"
   >
-    <Tile />
-    <Tile />
-    <Tile />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
+    <Tile
+      onClick={[Function]}
+      value={null}
+    />
   </div>
 </div>
 `;
