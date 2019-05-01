@@ -25,10 +25,10 @@ it("should be a tie", () => {
   tiles[2] = "X";
   tiles[3] = "O";
   tiles[4] = "X";
-  tiles[5] = "O";
-  tiles[6] = "X";
-  tiles[7] = "O";
-  tiles[8] = "X";
+  tiles[5] = "X";
+  tiles[6] = "O";
+  tiles[7] = "X";
+  tiles[8] = "O";
 
   expect(calculateTie(tiles)).toEqual(true);
 });

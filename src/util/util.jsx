@@ -19,6 +19,9 @@ export function calculateWinner(tiles) {
 }
 
 export function calculateTie(tiles) {
+  if (genericWinnerCalculator(tiles) !== null) {
+    return false;
+  }
   for (let i = 0; i < tiles.length; i++) {
     if (!tiles[i]) {
       return false;
