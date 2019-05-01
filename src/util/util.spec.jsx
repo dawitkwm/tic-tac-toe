@@ -1,12 +1,12 @@
-import { calculateWinner, calculateTie } from "./util";
+import { calculateWinner, calculateTie, genericWinnerCalculator } from "./util";
 
 it("should be a win", () => {
   const tiles = Array(9).fill(null);
   tiles[0] = "X";
   tiles[4] = "X";
   tiles[8] = "X";
-
   expect(calculateWinner(tiles)).toEqual("X");
+  expect(genericWinnerCalculator(tiles)).toEqual("X");
 });
 
 it("should not be a win", () => {
@@ -14,8 +14,8 @@ it("should not be a win", () => {
   tiles[0] = "X";
   tiles[4] = "O";
   tiles[8] = "X";
-
   expect(calculateWinner(tiles)).toEqual(null);
+  expect(genericWinnerCalculator(tiles)).toEqual(null);
 });
 
 it("should be a tie", () => {

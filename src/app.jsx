@@ -6,7 +6,11 @@ import Board from "./components/board/board";
 import History from "./components/history/history";
 import Info from "./components/info/info";
 
-import { calculateWinner, calculateTie } from "./util/util";
+import {
+  calculateWinner,
+  calculateTie,
+  genericWinnerCalculator
+} from "./util/util";
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +26,7 @@ class App extends Component {
     const history = this.state.history.slice(0, this.state.moveNumber + 1);
     const current = history[history.length - 1];
     const tiles = current.tiles.slice(); //copy
-    if (calculateWinner(tiles) || tiles[i]) {
+    if (genericWinnerCalculator(tiles) || tiles[i]) {
       return;
     }
 
@@ -48,7 +52,7 @@ class App extends Component {
   render() {
     const history = this.state.history;
     const current = history[this.state.moveNumber];
-    const winner = calculateWinner(current.tiles);
+    const winner = genericWinnerCalculator(current.tiles);
 
     let info;
     if (winner) {
