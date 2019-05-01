@@ -11,9 +11,11 @@ it("should be a win", () => {
 
 it("should not be a win", () => {
   const tiles = Array(9).fill(null);
-  tiles[0] = "X";
+  tiles[1] = "X";
   tiles[4] = "O";
-  tiles[8] = "X";
+  tiles[5] = "X";
+  tiles[7] = "X";
+  tiles[8] = "O";
   expect(calculateWinner(tiles)).toEqual(null);
   expect(genericWinnerCalculator(tiles)).toEqual(null);
 });

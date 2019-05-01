@@ -6,11 +6,7 @@ import Board from "./components/board/board";
 import History from "./components/history/history";
 import Info from "./components/info/info";
 
-import {
-  calculateWinner,
-  calculateTie,
-  genericWinnerCalculator
-} from "./util/util";
+import { calculateTie, genericWinnerCalculator } from "./util/util";
 
 class App extends Component {
   constructor(props) {
