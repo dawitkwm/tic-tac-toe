@@ -35,7 +35,7 @@ export function genericWinnerCalculator(tiles) {
   const boardSize = tiles.length;
   const boardDim = Math.round(Math.sqrt(boardSize));
 
-  let winner, step, end;
+  let winner;
   let i = 0;
   while (i < boardDim) {
     if (i === 0) {
