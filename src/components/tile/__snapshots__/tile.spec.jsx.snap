@@ -2,6 +2,6 @@
 
 exports[`Tile should render Tile component 1`] = `
 <button
-  className="tile"
+  className="tile undefined"
 />
 `;

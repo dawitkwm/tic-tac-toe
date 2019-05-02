@@ -19,21 +19,20 @@ class App extends Component {
   }
 
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.moveNumber + 1);
-    const current = history[history.length - 1];
-    const tiles = current.tiles.slice(); //copy
-    if (genericWinnerCalculator(tiles) || tiles[i]) {
+    const historyCopy = this.state.history.slice(0, this.state.moveNumber + 1);
+    const currentTilesCopy = historyCopy[historyCopy.length - 1].tiles.slice();
+    //if tile is already taken or game is over
+    if (currentTilesCopy[i] || genericWinnerCalculator(currentTilesCopy)) {
       return;
     }
-
-    tiles[i] = this.state.xTurn ? "X" : "O";
+    currentTilesCopy[i] = this.state.xTurn ? "X" : "O";
     this.setState({
-      history: history.concat([
+      history: historyCopy.concat([
         {
-          tiles: tiles
+          tiles: currentTilesCopy
         }
       ]),
-      moveNumber: history.length,
+      moveNumber: historyCopy.length,
       xTurn: !this.state.xTurn
     });
   }
@@ -47,13 +46,13 @@ class App extends Component {
 
   render() {
     const history = this.state.history;
-    const current = history[this.state.moveNumber];
-    const winner = genericWinnerCalculator(current.tiles);
+    const tiles = history[this.state.moveNumber].tiles;
+    const winner = genericWinnerCalculator(tiles);
 
     let info;
     if (winner) {
       info = "Winner is player " + winner;
-    } else if (calculateTie(current.tiles)) {
+    } else if (calculateTie(tiles)) {
       info = "It is a tie";
     } else {
       info = "Next player is " + (this.state.xTurn ? "X" : "O");
@@ -65,7 +64,7 @@ class App extends Component {
           <Info info={info} />
         </div>
         <div className="d-flex justify-content-center game-board">
-          <Board tiles={current.tiles} onClick={i => this.handleClick(i)} />
+          <Board tiles={tiles} onClick={i => this.handleClick(i)} />
         </div>
         <div className="d-flex justify-content-center game-history">
           <History history={history} onClick={step => this.jumpTo(step)} />

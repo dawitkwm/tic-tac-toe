@@ -4,7 +4,10 @@ import "./tile.css";
 class Tile extends Component {
   render() {
     return (
-      <button className="tile" onClick={this.props.onClick}>
+      <button
+        className={"tile " + this.props.value}
+        onClick={this.props.onClick}
+      >
         {this.props.value}
       </button>
     );
